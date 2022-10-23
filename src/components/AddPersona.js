@@ -34,47 +34,47 @@ const AddPersona = () => {
         setPersona(initialPersonaState);
         setSubmitted(false);
     };
-    return(
+    return (
         <div className="submit-form">
-        {submitted ? (
-            <div>
-                <h4>Agregado Corretamente</h4>
-                <button className="btn btn-success" onClick={newPersona}>
-                    Agregar
-                </button>
-            </div>
-        ) : (
-            <div>
-                <div className="form-group">
-                    <label htmlFor="identificacion">Identificacion</label>
-                    <input
-                        type="text"
-                        className="form-control"
-                        id="identificacion"
-                        required
-                        value={persona.identificacion}
-                        onChange={handleInputChange}
-                        name="identificacion"
-                    />
+            {submitted ? (
+                <div>
+                    <h4>Agregado Corretamente</h4>
+                    <button className="btn btn-success" onClick={newPersona}>
+                        Agregar
+                    </button>
                 </div>
-                <div className="form-group">
-                    <label htmlFor="nombre">Nombre</label>
-                    <input
-                        type="text"
-                        className="form-control"
-                        id="nombre"
-                        required
-                        value={persona.nombre}
-                        onChange={handleInputChange}
-                        name="nombre"
-                    />
+            ) : (
+                <div>
+                    <div className="form-group">
+                        <label htmlFor="identificacion">Identificacion</label>
+                        <input
+                            type="text"
+                            className="form-control"
+                            id="identificacion"
+                            required
+                            value={persona.identificacion}
+                            onChange={handleInputChange}
+                            name="identificacion"
+                        />
+                    </div>
+                    <div className="form-group">
+                        <label htmlFor="nombre">Nombre</label>
+                        <input
+                            type="text"
+                            className="form-control"
+                            id="nombre"
+                            required
+                            value={persona.nombre}
+                            onChange={handleInputChange}
+                            name="nombre"
+                        />
+                    </div>
+                    <button onClick={savePersona} className="btn btn-success">
+                        Agregar Persona
+                    </button>
                 </div>
-                <button onClick={savePersona} className="btn btn-success">
-                    Agregar Persona
-                </button>
-            </div>
-        )}
-    </div>
+            )}
+        </div>
     );
 
 };

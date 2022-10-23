@@ -27,12 +27,11 @@ const Producto = props => {
 
     const handleInputChange = event => {
         const {name, value} = event.target;
-        setCurrentPersona({ ...currentProducto, [name]: value});
+        setCurrentProducto({ ...currentProducto, [name]: value});
     };
 
     const updateProducto = () => {
-        ProductoDataService.update(currentProducto.id, currentProducto)
-            .then(response => {
+        ProductoDataService.update(currentProducto.id, currentProducto).then(response => {
                 console.log(response.data);
                 setMessage("Producto actualizado");
             })

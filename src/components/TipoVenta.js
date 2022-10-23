@@ -26,7 +26,7 @@ const TipoVenta = props => {
 
     const handleInputChange = event => {
         const {name, value} = event.target;
-        setCurrentPersona({ ...currentTipoVenta, [name]: value});
+        setCurrentTipoVenta({ ...currentTipoVenta, [name]: value});
     };
 
     const updateTipoVenta = () => {
