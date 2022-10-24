@@ -8,28 +8,42 @@ const AddPersona = () => {
     };
     const [persona, setPersona] = useState(initialPersonaState);
     const [submitted, setSubmitted] = useState(false);
+    const [cVacio, setCVacio] = useState(false);
     const handleInputChange = event => {
         const { name, value } = event.target;
         setPersona({ ...persona, [name]: value });
     };
-    const savePersona = () => {
-        var data = {
-            identificacion: persona.identificacion,
-            nombre: persona.nombre
-        };
-        PersonaDataService.create(data)
-            .then(response => {
-                setPersona({
-                    identificacion: response.data.identificacion,
-                    nombre: response.data.nombre
-                });
-                setSubmitted(true);
-                console.log(response.data);
-            })
-            .catch(e => {
-                console.log(e);
-            });
+
+    const validation = () => {
+        if (persona.identificacion === "" || persona.nombre === "") {
+            return false;
+        }
+        return true;
     };
+
+    const savePersona = () => {
+        if (validation()) {
+            var data = {
+                identificacion: persona.identificacion,
+                nombre: persona.nombre
+            };
+            PersonaDataService.create(data)
+                .then(response => {
+                    setPersona({
+                        identificacion: response.data.identificacion,
+                        nombre: response.data.nombre
+                    });
+                    setSubmitted(true);
+                    console.log(response.data);
+                })
+                .catch(e => {
+                    console.log(e);
+                });
+        } else {
+            setCVacio(true);
+        }
+    };
+
     const newPersona = () => {
         setPersona(initialPersonaState);
         setSubmitted(false);

@@ -199,7 +199,7 @@ const AddVenta = () => {
 
                         <p className={cVacio ? "text-danger mt-3" : "d-done"}>LLene todos los espacios para continuar</p>
                     </div> */}
-                    
+
                 </div>
             )}
         </div>

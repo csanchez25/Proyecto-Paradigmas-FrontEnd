@@ -104,11 +104,10 @@ const Venta = props => {
                         className="form-select"
                         name="persona"
                         id="persona"
-                        value={Venta.persona}
+                        value={currentVenta.persona}
                         onChange={handleInputChange}
                         required
                     >
-                        {/* <option value="">Cliente</option> */}
                         {persona.map((persona) => (
                             <option value={persona.identificacion}>{persona.identificacion}</option>
                         ))}
@@ -118,11 +117,10 @@ const Venta = props => {
                         className="form-select"
                         name="producto"
                         id="producto"
-                        value={Venta.producto}
+                        value={currentVenta.producto}
                         onChange={handleInputChange}
                         required
                     >
-                        {/* <option value="">Producto</option> */}
                         {producto.map((producto) => (
                             <option value={producto.descripcion}>{producto.descripcion}</option>
                         ))}
@@ -132,11 +130,10 @@ const Venta = props => {
                         className="form-select"
                         name="tipoVenta"
                         id="tipoVenta"
-                        value={Venta.tipoVenta}
+                        value={currentVenta.tipoVenta}
                         onChange={handleInputChange}
                         required
                     >
-                        {/* <option value="">Seleccione el Tipo de Venta</option> */}
                         {tipoVenta.map((tipoVenta) => (
                             <option value={tipoVenta.descripcion}>{tipoVenta.descripcion}</option>
                         ))}
@@ -146,8 +143,7 @@ const Venta = props => {
                         type="text"
                         className="form-control"
                         id="cantidad"
-                        required
-                        value={Venta.cantidad}
+                        value={currentVenta.cantidad}
                         onChange={handleInputChange}
                         name="cantidad"
                     />
@@ -156,8 +152,7 @@ const Venta = props => {
                         type="date"
                         className="form-control"
                         id="fecha"
-                        required
-                        value={Venta.fecha}
+                        value={currentVenta.fecha}
                         onChange={handleInputChange}
                         name="fecha"
                     />
